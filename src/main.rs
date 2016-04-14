@@ -1,40 +1,16 @@
+/**
+ * Rust test application with the purpose of testing various 
+ * features rust has to offer.
+ *
+ * @author: Colin Kirkpatrick
+ * @version: 0.1
+ */
+
 extern crate rand;
 
-use std::io;
-use std::cmp::Ordering;
-use rand::Rng;
+mod guess; // Import for the local guessing game
 
-/// Random number guessing game.
-fn main()
-{
-    println!("Guess the number");
-    // Below defaults to i32 (signed 32-bit integer)
-    let secret_number = rand::thread_rng().gen_range(1, 101);
-
-    loop {
-
-        println!("Please input your guess:");
-        let mut guess = String::new();
-        io::stdin().read_line(&mut guess)
-            .expect("Failed to read line");
-
-        // so, parse() returns an enum, with the 'Ok' type or the 'Err' type.
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num, // if Okay, write to 'num', return num.
-            Err(_) => continue, // continue: next iter of 'loop'
-        };
-
-        println!("You guessed {}", guess);
-
-        // The 'Ordering' value is an 'enum'; which looks like this: enum foo { Bar, Biz }; 
-        // where Bar and Biz are different types of Foo
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => {
-                println!("You win!");
-                break;
-            }
-        }
-    }
+/// Main function for test appication.
+fn main() {
+    guess::guessing_game();
 }
