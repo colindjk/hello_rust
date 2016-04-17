@@ -13,4 +13,6 @@ mod guess; // Import for the local guessing game
 /// Main function for test appication.
 fn main() {
     guess::guessing_game();
+
 }
+

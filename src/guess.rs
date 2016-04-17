@@ -24,7 +24,7 @@ pub fn guessing_game() {
         io::stdin().read_line(&mut guess)
             .expect("Failed to read line");
 
-        // so, parse() returns an enum, with the 'Ok' type or the 'Err' type.
+        // so, parse() returns an enum, with the 'Ok' -thing- or the 'Err' type.
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num, // if Okay, write to 'num', return num.
             Err(_) => continue, // continue: next iter of 'loop'
