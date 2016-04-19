@@ -4,6 +4,7 @@
  *
  * @author: Colin Kirkpatrick
  * @version: 0.1
+ * @resource: rand
  */
 extern crate rand;
 

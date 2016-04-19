@@ -4,6 +4,7 @@
  *
  * @author: Colin Kirkpatrick
  * @version: 0.1
+ * @resource: rand
  */
 
 extern crate rand;
@@ -12,7 +13,7 @@ mod guess; // Import for the local guessing game
 
 /// Main function for test appication.
 fn main() {
-    guess::guessing_game();
+    //guess::guessing_game();
 
 }
 
