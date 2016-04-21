@@ -7,13 +7,21 @@
  * @resource: rand
  */
 
-extern crate rand;
+extern crate hyper;
+extern crate iron;
+extern crate time;
 
-mod guess; // Import for the local guessing game
+use std::thread;
 
-/// Main function for test appication.
+//mod guess;
+mod server; // Import for the local server.rs
+mod client; // Import for the client
+ 
+/// Main function for test appication: Will take advantage of concurrency.
 fn main() {
-    //guess::guessing_game();
+    server::server_start();
+    //thread::spawn(|| server::server_start());
+    //thread::spawn(|| client::client_start());
 
 }
 
